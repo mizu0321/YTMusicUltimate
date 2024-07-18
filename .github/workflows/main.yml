@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs: 
       decrypted_youtube_music_url:
-        description: "The direct URL to the decrypted YouTube Music ipa (Upload a decrypted .ipa file to Dropbox and input its URL here.)"
+        description: "https://www.dropbox.com/scl/fi/zog350g0mdmyed4selu5j/com.google.ios.youtubemusic-7.10-Decrypted.ipa?rlkey=htwx8454kashnaf11eowy5avy&st=25g477ss&dl=0"
         default: ""
         required: true
         type: string    
@@ -58,7 +58,7 @@ jobs:
       - name: Download iOS SDK
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
-          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/arichorn/sdks/
+          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/xybp888/iOS-SDKs
           cd sdks
           git sparse-checkout set --no-cone iPhoneOS16.2.sdk
           git checkout
